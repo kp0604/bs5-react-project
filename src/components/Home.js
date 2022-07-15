@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import Cardscomp from "./Cardscomp";
 import { Modal, Button } from "react-bootstrap";
+import { cardsdata } from "../helpers/cardsdata";
+import a5 from "../imgs/a5.png";
+import a6 from "../imgs/a6.png";
+import a7 from "../imgs/a7.png";
+import a8 from "../imgs/a8.png";
 
 export default function Home() {
   const [show, setShow] = useState(false);
@@ -22,9 +27,27 @@ export default function Home() {
       <div className="container mt-4">
         <div className="row">
           <div className="col-lg-8 col-xs-12">
-            <Cardscomp />
-            <Cardscomp />
-            <Cardscomp />
+            <div class="w-100">
+              <ul class="nav nav-tabs">
+                <li class="nav-item mb-2">
+                  <span class="nav-link text-dark">All Posts</span>
+                </li>
+                <li class="nav-item">
+                  <span class="nav-link text-dark">Article</span>
+                </li>
+                <li class="nav-item">
+                  <span class="nav-link text-dark">Event</span>
+                </li>
+                <li class="nav-item">
+                  <span class="nav-link text-dark">Education</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              {cardsdata.map((card) => {
+                return <Cardscomp card={card} />;
+              })}
+            </div>
           </div>
           <div className="col-lg-4 col-xs-0 d-lg-block d-none">
             <div className="container">
@@ -76,6 +99,69 @@ export default function Home() {
                 <i className="fa-solid fa-circle-exclamation me-1"></i> Your
                 location will help us serve better and extend a personalised
                 experience
+              </div>
+              <div class="d-none d-lg-block">
+                <h5>
+                  <i class="fa-solid fa-thumbs-up"></i> Recommended Groups
+                </h5>
+                <div class="vstack gap-4 mt-4">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src={a5}
+                        className="card-img-top d-block me-4"
+                        style={{ height: "45px", width: "45px" }}
+                        alt="img"
+                      />
+                      <h6>Leisure</h6>
+                    </div>
+                    <button class="btn py-0 px-3 btn-secondary rounded-pill">
+                      Follow
+                    </button>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src={a6}
+                        className="card-img-top d-block me-4"
+                        style={{ height: "45px", width: "45px" }}
+                        alt="img"
+                      />
+                      <h6>Activism</h6>
+                    </div>
+                    <button class="btn py-0 px-3 btn-secondary rounded-pill">
+                      Follow
+                    </button>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src={a7}
+                        className="card-img-top d-block me-4"
+                        style={{ height: "45px", width: "45px" }}
+                        alt="img"
+                      />
+                      <h6>MBA</h6>
+                    </div>
+                    <button class="btn py-0 px-3 btn-secondary rounded-pill">
+                      Follow
+                    </button>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src={a8}
+                        className="card-img-top d-block me-4"
+                        style={{ height: "45px", width: "45px" }}
+                        alt="img"
+                      />
+                      <h6>Philosphy</h6>
+                    </div>
+                    <button class="btn py-0 px-3 btn-secondary rounded-pill">
+                      Follow
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
