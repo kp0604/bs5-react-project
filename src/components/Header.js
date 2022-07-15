@@ -27,9 +27,9 @@ export default function Header() {
             />
           </div>
         </form>
-        <div className="d-flex align-items-center d-none d-md-block">
+        <div className="d-md-flex align-items-center d-none">
           <span>Create Account.</span>
-          <div class="dropdown">
+          <div>
             <button
               class="btn btn-white dropdown-toggle ps-0"
               type="button"
